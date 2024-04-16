@@ -1,0 +1,4 @@
+anis tolol	anis tolol	NEGATIF
+anis cerdas	anis cerdas	POSITIF
+anis jelek	anis jelek	NEGATIF
+anis jelek	anis jelek	NEGATIF

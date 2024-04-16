@@ -1,0 +1,50 @@
+{% include 'header.html' %}
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Approach -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <div class="row">
+                <div class="col-4">
+                    <h6 class="m-0 font-weight-bold text-primary">Menampilkan Data</h6>
+                </div>
+
+                <form enctype="multipart/form-data" method="POST" class="col-8 d-flex justify-content-end">
+                    <div class="ml-auto">
+                        <input type="file" name="file">
+                        <button type="submit" name="" value="upload csv" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Preprocessing</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Data Tweet</th>
+                            <th>Labels</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for table_row in table_rows %}
+                        <tr>
+                            {{ table_row|safe }}
+                            <td><a href="/delete/{{ loop.index }}" class="btn btn-danger btn-sm">Delete</a></td> <!-- Tambahkan tombol delete -->
+                        </tr>
+                        {% endfor %}
+                    </tbody>                    
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% include 'footer.html' %}
